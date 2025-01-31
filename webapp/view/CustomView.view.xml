@@ -1,0 +1,453 @@
+<mvc:View controllerName="listapp2.controller.CustomView"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+    xmlns:sf="sap.ui.comp.smartfilterbar"
+	xmlns:smartTable="sap.ui.comp.smarttable"
+    xmlns:core="sap.ui.core"
+	height="100%"
+	displayBlock="true"
+	xmlns="sap.m"
+	xmlns:f="sap.f"
+	xmlns:mdc="sap.ui.mdc"
+	xmlns:mdct="sap.ui.mdc.table"
+	xmlns:vm="sap.ui.fl.variants" >
+    <!-- <Page id="page" title="{i18n>title}">
+    			<List id="_IDGenList" headerText="A List" backgroundDesign="Translucent" width="auto" class="sapUiResponsiveMargin"/>
+
+            
+
+
+    </Page> -->
+
+
+        <Page id="page" title="{i18n>title}" >
+
+
+        <!-- <subHeader>
+			<Toolbar id="_IDGenToolbar">
+				<SearchField id="_IDGenSearchField" width="100%" search=".onSearch" />
+				<Text text="Default Search" id="idSearchListToolbar" />
+			</Toolbar>
+		</subHeader> -->
+		<VBox id="_IDGenVBox" class="sapUiSmallMargin" width="100%">
+
+        	<!-- <f:DynamicPageTitle id="_IDGenDynamicPageTitle">
+					<f:heading>
+						<svm:SmartVariantManagement id="svm" showExecuteOnSelection="true" />
+					</f:heading>
+					<f:expandedContent>
+						<Label id="expandedLabel" text="No filters active" />
+					</f:expandedContent>
+					<f:snappedContent>
+						<Label id="snappedLabel" text="No filters active" />
+					</f:snappedContent>
+				</f:DynamicPageTitle> -->
+
+			<Label id="_IDGenLabel" text="Default Fiori UI" />
+            <HBox id="_IDGenHBox" width="100%" >
+            <!-- <SearchField ariaLabelledBy="Hbox" id="_IDGenSearchField1" width="80%" class="sapUiSmallMargin"  /> -->
+						<!-- <SearchField ariaLabelledBy="text1" id="maxPrice3" liveChange="onFilter">
+							<layoutData><OverflowToolbarLayoutData id="_IDGenOverflowToolbarLayoutData3" maxWidth="300px" shrinkable="true" priority="NeverOverflow"/></layoutData>
+						</SearchField>
+                          <ToolbarSpacer id="_IDGenToolbarSpacer3"/>
+             <Button id="_IDGenButton" text="Find" /> -->
+            </HBox>
+			
+		</VBox>
+
+
+
+        		<VBox id="_IDGenVBox3"  class="sapUiSmallMargin">
+                   <HBox id="_IDGenHBox1" >
+
+                       <!-- <VBox id="_IDGenVBox4"  class="sapUiSmallMargin">
+                       <Label id="_IDGenLabel2" text="Company Code" />
+                       <SearchField id="_IDGenSearchField"  width="90%" class="sapUiSmallMargin" />
+                       </VBox> -->
+
+                        <!-- <VBox id="_IDGenVBox5"   class="sapUiSmallMargin">
+                       <Label id="_IDGenLabel3"  text="Company ID" />
+                       <SearchField id="_IDGenSearchField2"   width="90%" class="sapUiSmallMargin" />
+                       </VBox> -->
+
+
+                        <!-- <VBox id="_IDGenVBox6"    class="sapUiSmallMargin">
+                       <Label id="_IDGenLabel4"  text="Company Category" />
+                       <SearchField id="_IDGenSearchField3"   width="90%" class="sapUiSmallMargin" />
+                       </VBox> -->
+
+
+                       <VBox id="_IDGenVBox7"  class="sapUiSmallMargin" >
+                       <OverflowToolbar id="otbSubheader">
+                        <ToolbarSpacer id="_IDGenToolbarSpacer2"/>
+                        <Label id="_IDGenLabel2"   text="Company Code" />
+						<SearchField ariaLabelledBy="text1" id="maxPrice2" liveChange="onFilter">
+                        
+							<layoutData><OverflowToolbarLayoutData id="_IDGenOverflowToolbarLayoutData2" maxWidth="300px" shrinkable="true" priority="NeverOverflow"/></layoutData>
+						</SearchField>
+                       <ToolbarSpacer id="_IDGenToolbarSpacer1"/>
+                       <Label id="_IDGenLabel3"    text="Company ID" />
+						<SearchField ariaLabelledBy="text1" id="maxPrice1" liveChange="onFilter">
+							<layoutData><OverflowToolbarLayoutData id="_IDGenOverflowToolbarLayoutData1" maxWidth="300px" shrinkable="true" priority="NeverOverflow"/></layoutData>
+						</SearchField>
+						<ToolbarSpacer id="_IDGenToolbarSpacer"/>
+                        <Label id="_IDGenLabel4"    text="Company Category" />
+						<SearchField ariaLabelledBy="text1" id="maxPrice" liveChange="onFilter">
+							<layoutData><OverflowToolbarLayoutData id="_IDGenOverflowToolbarLayoutData" maxWidth="300px" shrinkable="true" priority="NeverOverflow"/></layoutData>
+						</SearchField>
+                         <Button id="_IDGenButton2" type="Emphasized" text="Go" />
+						<!-- <Button id="_IDGenButton1" text="Reset" type="Transparent" press="onReset"/> -->
+                        <!-- <Button id="_IDGenButton1" text="Adapt Filter" type="Transparent" press="onAdapt"/> -->
+
+                        <MenuButton id="_IDGenMenuButton" text="Adapt Filter">
+                            <menu>
+                            <Menu id="_IDGenMenu1" itemSelected="onMenuAction">
+						<items>
+							<MenuItem id="_IDGenMenuItem3" text="Company Code" />
+							<MenuItem id="_IDGenMenuItem4" text="Order Count" />
+							<MenuItem id="_IDGenMenuItem5" text="Company Category" />
+						</items>
+                            </Menu>
+                            </menu>
+                        </MenuButton>
+                        
+						<OverflowToolbarButton id="_IDGenOverflowToolbarButton" tooltip="Sort" type="Transparent" text="Sort" icon="sap-icon://sort" press="onSort"/>
+						<OverflowToolbarButton id="_IDGenOverflowToolbarButton1" tooltip="Group" type="Transparent" text="Group" icon="sap-icon://group-2" press="onGroup"/>
+						<OverflowToolbarMenuButton id="_IDGenOverflowToolbarMenuButton" tooltip="Export" type="Transparent" text="Export" buttonMode="Split" icon="sap-icon://share" defaultAction="onDefaultActionAccept" beforeMenuOpen="onBeforeMenuOpen" useDefaultActionOnly="true">
+							<menu>
+								<Menu id="_IDGenMenu" itemSelected="onMenuAction">
+									<MenuItem id="_IDGenMenuItem" text="Export as PDF" icon="sap-icon://pdf-attachment" />
+									<MenuItem id="_IDGenMenuItem1" text="Export to Excel" icon="sap-icon://excel-attachment" />
+								</Menu>
+							</menu>
+						</OverflowToolbarMenuButton>
+					</OverflowToolbar>
+                       </VBox>
+                    </HBox>
+                </VBox>
+<!-- 
+        	<VBox id="_IDGenVBox1">
+				<f:DynamicPageHeader id="_IDGenDynamicPageHeader">
+					<f:content>
+						<fb:FilterBar id="filterbar" persistencyKey="myPersKey" useToolbar="false" search=".onSearch" filterChange=".onFilterChange" afterVariantLoad=".onAfterVariantLoad">
+							<fb:filterGroupItems>
+								<fb:FilterGroupItem id="_IDGenFilterGroupItem" name="Name" label="Name" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+										<MultiComboBox id="_IDGenMultiComboBox"
+											name="Name"
+											selectionChange=".onSelectionChange"
+											items="{
+												path: '/ProductNames',
+												templateShareable: true
+											}"
+										>
+											<core:Item id="_IDGenItem" key="{key}" text="{name}"/>
+										</MultiComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+								<fb:FilterGroupItem id="_IDGenFilterGroupItem1" name="Category" label="Category" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+										<MultiComboBox id="_IDGenMultiComboBox1"
+											name="Category"
+											selectionChange=".onSelectionChange"
+											items="{
+												path: '/ProductCategories',
+												templateShareable: true
+											}"
+										>
+											<core:Item id="_IDGenItem1" key="{key}" text="{name}"/>
+										</MultiComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+								<fb:FilterGroupItem id="_IDGenFilterGroupItem2" name="SupplierName" label="SupplierName" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+										<MultiComboBox id="_IDGenMultiComboBox2"
+											name="SupplierName"
+											selectionChange=".onSelectionChange"
+											items="{
+												path: '/ProductSuppliers',
+												templateShareable: true
+											}"
+										>
+											<core:Item id="_IDGenItem2" key="{key}" text="{name}"/>
+										</MultiComboBox>
+									</fb:control>
+								</fb:FilterGroupItem>
+							</fb:filterGroupItems>
+						</fb:FilterBar>
+					</f:content>
+				</f:DynamicPageHeader>
+			</VBox> -->
+
+
+
+
+<!-- 
+             <Table id="_IDGenTable" headerText="DATA VIEW" width="auto" class="sapUiResponsiveMargin">
+            
+            </Table> -->
+
+
+            <VBox id="_IDGenVBox2" class="sapUiSmallMargin">
+            <Label id="_IDGenLabel1" text="Customer Orders" />
+            </VBox>
+
+
+           
+
+
+      
+        <VBox id="_IDGenVBox1" class="sapUiSmallMargin" justifyContent="Center" alignItems="Center">
+        <!-- Your content goes here -->
+        <!-- <Button text="Button 1" />
+        <Button text="Button 2" />
+        <Text text="Centered Text" /> -->
+
+        <Table
+					id="table"
+					inset="false"
+					items="{
+						path: '/ProductCollection'
+					}"                    
+                    
+                    width="90%"
+				>
+					<columns>
+						<Column id="_IDGenColumn" minScreenWidth="Tablet" demandPopin="true">
+							<Text id="_IDGenText" text="Company Code"/>
+						</Column>
+						<Column id="_IDGenColumn1" minScreenWidth="Tablet" demandPopin="true">
+							<Text id="_IDGenText1" text="Order Count"/>
+						</Column>
+						<Column id="_IDGenColumn2" minScreenWidth="Tablet" demandPopin="true">
+							<Text id="_IDGenText2" text="SupplierName"/>
+						</Column>
+                        <Column id="_IDGenColumn3" minScreenWidth="Tablet" demandPopin="true">
+							<Text id="_IDGenText7"  text="Category"/>
+						</Column>
+						<Column id="_IDGenColumn4" minScreenWidth="Tablet" demandPopin="true">
+							<Text id="_IDGenText6" text="Amount"/>
+						</Column>
+						<Column id="_IDGenColumn5" minScreenWidth="Tablet" demandPopin="true">
+							<Text id="_IDGenText5" text="Curreny"/>
+						</Column>
+					</columns>
+                
+
+					<items>
+						<ColumnListItem id="_IDGenColumnListItem" vAlign="Middle">
+							<cells>
+								<ObjectIdentifier id="_IDGenObjectIdentifier" title="{Company Code}" text="{ProductId}" />
+								<Text id="_IDGenText3" text="{Order Count}" />
+								<Text id="_IDGenText4" text="{SupplierName}" />
+                                <Text id="_IDGenText8"  text="{Category}" />
+								<Text id="_IDGenText9"  text="{Amount}" />
+                                <Text id="_IDGenText10"  text="{Currency}" />
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+
+
+
+
+
+        </VBox>
+
+            
+        <!-- <l:VerticalLayout id="verticalLayout" class="sapUiContentPadding" width="100%">
+            <sf:SmartFilterBar
+                id="smartFilterBar"
+                entitySet="MainEntitySet"
+                enableBasicSearch="true"
+                basicSearchFieldName="CompanyCode"
+                persistencyKey="UniqueAndStablePersistencyKey">
+                <sf:customData>
+                    <core:CustomData key="defaultFilterBarExpanded" value='{"CompanyCode": "true"}'/>
+                    <core:CustomData key="defaultShowAllFilters" value='{"CompanyCode": "true"}'/>
+                </sf:customData>
+            </sf:SmartFilterBar>
+
+
+
+            <smartTable:SmartTable
+				id="smartTable"
+				entitySet="MainEntitySet"
+				smartFilterId="smartFilterBar"
+				tableType="Table"
+				enableAutoColumnWidth="true"
+				useTablePersonalisation="true"
+				header="Customer orders"
+				showRowCount="true">
+				<smartTable:layoutData>
+					<m:FlexItemData id="_IDGenFlexItemData" growFactor="1" baseSize="0%"/>
+				</smartTable:layoutData>
+					<smartTable:customData>
+						<core:CustomData key="defaultShowAllFilters" value='{"CompanyCode": "true"}'/>
+						<core:CustomData key="defaultFilterBarExpanded" value='{"CompanyCode": "true"}'/>
+					</smartTable:customData>
+			</smartTable:SmartTable>
+
+       
+        </l:VerticalLayout> -->
+
+        <!-- <f:DynamicPage id="page1">
+		<f:title>
+			<f:DynamicPageTitle id="_IDGenDynamicPageTitle">
+				<f:heading>
+					<vm:VariantManagement id="variants" for="filterbar, table"/>
+				</f:heading>
+			</f:DynamicPageTitle>
+		</f:title>
+		<f:header>
+			<f:DynamicPageHeader id="_IDGenDynamicPageHeader" pinnable="true">
+				<mdc:FilterBar id="filterbar" delegate="{
+							name: 'mdc/sample/delegate/JSONFilterBarDelegate',
+							payload: {
+								valueHelp: {
+									name: 'NameValueHelp',
+									range: 'RangeValueHelp'
+								}
+							}
+						}"
+						p13nMode = "Item,Value">
+					<mdc:basicSearchField>
+						<mdc:FilterField id="_IDGenFilterField1" delegate="{name: 'sap/ui/mdc/field/FieldBaseDelegate'}"
+							dataType="sap.ui.model.type.String"
+							placeholder= "Search Mountains"
+							conditions="{$filters>/conditions/$search}"
+							propertyKey="$search"
+							maxConditions="1"/>
+					</mdc:basicSearchField>
+
+					<mdc:filterItems>
+						<mdc:FilterField id="_IDGenFilterField"
+							label="Name"
+							propertyKey="name"
+							dataType="sap.ui.model.type.String"
+							conditions="{$filters>/conditions/name}"
+							valueHelp="name-vh"
+							delegate="{name: 'sap/ui/mdc/field/FieldBaseDelegate'}"/>
+					</mdc:filterItems>
+					<mdc:dependents>
+						<core:Fragment fragmentName="mdc.sample.view.fragment.NameValueHelp" type="XML"/>
+					</mdc:dependents>
+				</mdc:FilterBar>
+			</f:DynamicPageHeader>
+		</f:header>
+		<f:content>
+			<mdc:Table
+				id="table"
+				header="Mountains"
+				p13nMode="Sort,Column"
+				type="ResponsiveTable"
+				threshold="100"
+				filter="filterbar"
+				showRowCount="false"
+				delegate="{
+					name: 'mdc/sample/delegate/JSONTableDelegate',
+					payload: {
+						bindingPath: 'mountains>/mountains',
+						searchKeys: ['name', 'range', 'parent_mountain', 'countries']
+					}
+				}">
+				<mdct:Column id="_IDGenColumn5"
+					propertyKey="name"
+					header="Name">
+					<Text id="_IDGenText5" text="{mountains>name}"/>
+				</mdct:Column>
+				<mdct:Column id="_IDGenColumn4"
+					propertyKey="height"
+					header="Height">
+					<Text id="_IDGenText4" text="{path: 'mountains>height' , type: 'mdc.sample.model.type.LengthMeter'}"/>
+				</mdct:Column>
+				<mdct:Column id="_IDGenColumn3"
+					propertyKey="range"
+					header="Range">
+					<Text id="_IDGenText3" text="{mountains>range}"/>
+				</mdct:Column>
+				<mdct:Column id="_IDGenColumn2"
+					propertyKey="first_ascent"
+					header="First Ascent">
+					<Text id="_IDGenText2" text="{mountains>first_ascent}"/>
+				</mdct:Column>
+				<mdct:Column id="_IDGenColumn1"
+					propertyKey="countries"
+					header="Countries">
+					<Text id="_IDGenText1" text="{mountains>countries}"/>
+				</mdct:Column>
+				<mdct:Column id="_IDGenColumn"
+					propertyKey="parent_mountain"
+					header="Parent Mountain">
+					<Text id="_IDGenText" text="{mountains>parent_mountain}"/>
+				</mdct:Column>
+			</mdc:Table>
+		</f:content>
+	</f:DynamicPage> -->
+
+
+
+
+
+				<!-- <sfb:SmartFilterBar
+					id="smartFilterBar"
+					entitySet="MainEntitySet"
+					search="onSearch">
+					<sfb:customData>
+						<core:CustomData
+							key="defaultFilterBarExpanded"
+							value='{"VH_many_filters": "true"}'/>
+						<core:CustomData
+							key="defaultShowAllFilters"
+							value='{"VH_many_filters": "true"}'/>
+					</sfb:customData>
+					<sfb:controlConfiguration>
+						<sfb:ControlConfiguration id="_IDGenControlConfiguration1"
+							key="Name"
+							visibleInAdvancedArea="true" />
+						<sfb:ControlConfiguration id="_IDGenControlConfiguration"
+							key="Currency"
+							visibleInAdvancedArea="true" />
+					</sfb:controlConfiguration>
+				</sfb:SmartFilterBar> -->
+
+
+
+
+
+			<!-- <m:VBox id="_IDGenVBox">
+				<smartTable:SmartTable
+					id="smartTable"
+					entitySet="MainEntitySet"
+					smartFilterId="smartFilterBar"
+					tableType="Table"
+					header="Products"
+					showRowCount="true"
+					enableAutoColumnWidth="true">
+					<smartTable:customData>
+						<core:CustomData key="defaultFilterBarExpanded" value='true'/>
+						<core:CustomData key="defaultShowAllFilters" value='true'/>
+					</smartTable:customData>
+					<smartTable:layoutData>
+						<m:FlexItemData id="_IDGenFlexItemData" growFactor="1" baseSize="0%"/>
+					</smartTable:layoutData>
+				</smartTable:SmartTable>
+				<m:Panel id="_IDGenPanel"
+					expanded="true"
+					class="sapUiMediumMarginTopBottom">
+					<m:Title id="_IDGenTitle" text="Filter Query:" />
+					<m:Text id="filterResult" width="100%" />
+				</m:Panel>
+			</m:VBox> -->
+
+
+
+        
+    </Page>
+</mvc:View>
+
+
+
+
+
+

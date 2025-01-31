@@ -19,6 +19,8 @@
 
 ## listapp2
 
+![App View](./assets/image/screen.png)
+
 An SAP Fiori application.
 
 ### Starting the generated app
